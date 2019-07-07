@@ -18,4 +18,6 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
+
+    Route::post('exports', 'ExporterController@export')-> name('voyager.exports.download');
 });
