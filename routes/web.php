@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Http\Middleware\ProjectExportables;
 
 Route::get('/', function () {
     return view('welcome');
@@ -19,5 +20,10 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 
-    Route::post('exports', 'ExporterController@export')-> name('voyager.exports.download');
+    Route::get('exports', 'ExporterController@index')-> middleware(ProjectExportables::class)-> name('voyager.exports.index');
+    Route::post('exports', 'ExporterController@export')-> middleware(ProjectExportables::class)-> name('voyager.exports.download');
 });
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -1,1 +1,17 @@
-{}
+{
+    "last_remote_check": 1562722968,
+    "hooks": {
+        "voyager-themes": {
+            "name": "voyager-themes",
+            "description": "This hook will add support for Voyager front-end themes",
+            "version": "0.15",
+            "enabled": true
+        },
+        "sllize-voyager-themes": {
+            "name": "sllize-voyager-themes",
+            "description": "This hook will add support for Voyager front-end themes",
+            "version": "dev-master",
+            "enabled": false
+        }
+    }
+}
